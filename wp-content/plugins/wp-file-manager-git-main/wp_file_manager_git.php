@@ -76,7 +76,8 @@ if(!class_exists('wp_file_manager_git')) {
 				$output4 =shell_exec('git commit -m "'.$message.'"');
 				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');	
 				$output9 = 	shell_exec('git remote -v');
-				echo $output9;die;
+				$output0 =   shell_exec('git push -u origin main');
+				echo $output0;die;
 				
 				//echo shell_exec('git config --global user.email "'.$email.'"');
 				//echo shell_exec('git config --global user.name "'.$username.'"');
