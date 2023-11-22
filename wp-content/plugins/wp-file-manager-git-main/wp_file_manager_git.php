@@ -118,13 +118,15 @@ if(!class_exists('wp_file_manager_git')) {
 				$output4 = 	 shell_exec('git config --global user.email "'.$email.'"');
 				$output5 = 	shell_exec('git config --global user.name "'.$username.'"');
 				$output6 =  shell_exec('git commit -m "'.$message.'"');
-			
-				//$output7 = 	shell_exec('git branch -M main');
-				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
-				$output99 = 	shell_exec('git branch -a');	
+
+				$output99 = 	shell_exec("git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'");	
 				echo $output99;die;
+				
+				$output7 = 	shell_exec('git branch -M main');
+				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
+				
 				$output9 = 	shell_exec('git remote -v');
-				$output0 =   shell_exec('git push');
+				$output0 =   shell_exec('git push -u origin main');
 				//-u origin main
 
 				
