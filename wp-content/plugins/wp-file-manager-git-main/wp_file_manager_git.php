@@ -69,18 +69,19 @@ if(!class_exists('wp_file_manager_git')) {
 				$password = $settings['ELFINDER_GIT_PASSWORD'];
 				$message = $_POST['message'];
 				$gitreponame = $settings['ELFINDER_GIT_ACCESS_URL'];
-				$git_url = 'github.com/'.$username.'/'.$gitreponame;
+				$git_url = 'github.com/'.$username.'/'.$gitreponame.'.git';
 				$dir = $settings['ELFINDER_GIT_MASTER_ACCESS_DIRECTORY']; // path 
 				chdir( $dir );
-				echo shell_exec('git add .');
+				$output3 = shell_exec('git add .');
+				$output4 =shell_exec('git commit -m "'.$message.'"');
 				//echo shell_exec('git config --global user.email "'.$email.'"');
 				//echo shell_exec('git config --global user.name "'.$username.'"');
 				$user_cpanel = shell_exec("whoami");
                 $check = shell_exec('git -c user.name="'.$user_cpanel.'" -c user.email="'.$email.'" commit -m "'.$message.'" ');
                 if ($check == null) {
-					$check =  shell_exec('git commit -m "'.$message.'"');
+					//$check =  shell_exec('git commit -m "'.$message.'"');
                 }
-				echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+				$output5 = shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
 				echo "Commit Successfull !! ";
 				//echo 'Here';
 			} else {
