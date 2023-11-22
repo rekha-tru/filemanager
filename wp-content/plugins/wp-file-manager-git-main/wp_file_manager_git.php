@@ -103,7 +103,7 @@ if(!class_exists('wp_file_manager_git')) {
 				$git_url = 'https://github.com/'.$username.'/'.$gitreponame.'.git';
 				$dir = $settings['ELFINDER_GIT_ACCESS_DIRECTORY']; // path
 				chdir( $dir ); 
-				//changed
+				//changed sensond
 				$output1 = 	 shell_exec('git init');
 			//	$output2 =  shell_exec('git status');
 				$output3 =  shell_exec('git add .');	
