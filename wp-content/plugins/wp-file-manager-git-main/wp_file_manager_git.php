@@ -119,8 +119,8 @@ if(!class_exists('wp_file_manager_git')) {
 				$output5 = 	shell_exec('git config --global user.name "'.$username.'"');
 				$output6 =  shell_exec('git commit -m "'.$message.'"');
 
-				$output99 = 	shell_exec("git branch");	
-				echo $output99;die;
+				//$output99 = 	shell_exec("git branch");	
+				//echo $output99;die;
 
 				$output7 = 	shell_exec('git branch -M main');
 				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
