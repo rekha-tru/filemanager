@@ -74,7 +74,7 @@ if(!class_exists('wp_file_manager_git')) {
 				chdir( $dir );
 				$output3 = shell_exec('git add .');
 				$output4 =shell_exec('git commit -m "'.$message.'"');
-				echo $output4;die;
+				
 				//echo shell_exec('git config --global user.email "'.$email.'"');
 				//echo shell_exec('git config --global user.name "'.$username.'"');
 				$user_cpanel = shell_exec("whoami");
@@ -83,6 +83,7 @@ if(!class_exists('wp_file_manager_git')) {
 					//$check =  shell_exec('git commit -m "'.$message.'"');
                 }
 				$output5 = shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+				echo $output5;die;
 				echo "Commit Successfull !! ";
 				//echo 'Here';
 			} else {
