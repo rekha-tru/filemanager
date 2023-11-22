@@ -76,17 +76,18 @@ if(!class_exists('wp_file_manager_git')) {
 				$output4 =shell_exec('git commit -m "'.$message.'"');
 				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');	
 				$output9 = 	shell_exec('git remote -v');
-				$output0 =   shell_exec('git push -u origin main');
+				$output0 =   shell_exec('git push');
 				echo $output0;die;
 				
 				//echo shell_exec('git config --global user.email "'.$email.'"');
 				//echo shell_exec('git config --global user.name "'.$username.'"');
-				$user_cpanel = shell_exec("whoami");
-                $check = shell_exec('git -c user.name="'.$user_cpanel.'" -c user.email="'.$email.'" commit -m "'.$message.'" ');
-                if ($check == null) {
-					//$check =  shell_exec('git commit -m "'.$message.'"');
-                }
-				$output5 = shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+				
+			//R	// $user_cpanel = shell_exec("whoami");
+                // $check = shell_exec('git -c user.name="'.$user_cpanel.'" -c user.email="'.$email.'" commit -m "'.$message.'" ');
+                // if ($check == null) {
+				// 	$check =  shell_exec('git commit -m "'.$message.'"');
+                // }
+				// $output5 = shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
 				
 				echo "Commit Successfull !! ";
 				//echo 'Here';
@@ -129,13 +130,14 @@ if(!class_exists('wp_file_manager_git')) {
 				echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');*/
 
 
-				// $user_cpanel = shell_exec("whoami");
+			//R	// $user_cpanel = shell_exec("whoami");
                 // $check = shell_exec('git -c user.name="'.$user_cpanel.'" -c user.email="'.$email.'" commit -m "'.$message.'" ');
                 // if ($check == null) {
 				// 	$check =  shell_exec('git commit -m "'.$message.'"');
                 // }
 				// echo 'git push https://'.$username.':'.$password.'@'.$git_url.' --all';die;
 				// echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+
 				echo "Commit Successfull !! ";
 
 			} else {
