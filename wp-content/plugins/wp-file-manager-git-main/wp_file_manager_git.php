@@ -119,7 +119,7 @@ if(!class_exists('wp_file_manager_git')) {
 				$output5 = 	shell_exec('git config --global user.name "'.$username.'"');
 				$output6 =  shell_exec('git commit -m "'.$message.'"');
 
-				$output99 = 	shell_exec("git symbolic-ref refs/remotes/origin/HEAD --short");	
+				$output99 = 	shell_exec("git branch");	
 				echo $output99;die;
 
 				$output7 = 	shell_exec('git branch -M main');
