@@ -114,7 +114,7 @@ if(!class_exists('wp_file_manager_git')) {
 				//$git_url = str_replace(array('https://','http://'),'',$settings['ELFINDER_GIT_ACCESS_URL']);
 				$gitreponame = $settings['ELFINDER_GIT_ACCESS_URL'];
 				$gitbranch = $settings['ELFINDER_GIT_ACCESS_BRANCH'];
-				//echo $gitreponame;die;
+				//echo $gitbranch;die;
 				$git_url = 'https://github.com/'.$username.'/'.$gitreponame.'.git';
 				$dir = $settings['ELFINDER_GIT_ACCESS_DIRECTORY']; // path
 				chdir( $dir ); 
@@ -138,6 +138,7 @@ if(!class_exists('wp_file_manager_git')) {
 				}else{
 					$output0 =   shell_exec('git push -u origin main');
 				}
+				echo $output0;die;
 				//-u origin main
 
 				
