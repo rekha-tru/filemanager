@@ -75,11 +75,15 @@ if(!class_exists('wp_file_manager_git')) {
 				chdir( $dir );
 				$output3 = shell_exec('git add .');
 				$output4 =shell_exec('git commit -m "'.$message.'"');
-				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');	
-				$output9 = 	shell_exec('git remote -v');
+				
+				//$output9 = 	shell_exec('git remote -v');
 				if($gitbranch){
+					$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 					$output0 =   shell_exec('git push origin HEAD:'.$gitbranch);
+					//$output0 =   shell_exec('git push -u origin main');
 				}else{
+					$output7 = 	shell_exec('git branch -M main');
+					$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 					$output0 =   shell_exec('git push -u origin main');
 				}
 				
@@ -129,15 +133,17 @@ if(!class_exists('wp_file_manager_git')) {
 				//$output99 = 	shell_exec("git branch");	
 				//echo $output99;die;
 
-				//$output7 = 	shell_exec('git branch -M main');
-				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 				
-				$output9 = 	shell_exec('git remote -v');
+				
+				//$output9 = 	shell_exec('git remote -v');
 				//echo $output9;die;
 				if($gitbranch){
+					$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 					$output0 =   shell_exec('git push origin HEAD:'.$gitbranch);
 					//$output0 =   shell_exec('git push -u origin main');
 				}else{
+					$output7 = 	shell_exec('git branch -M main');
+					$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 					$output0 =   shell_exec('git push -u origin main');
 				}
 				echo $output0;die;
