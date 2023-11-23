@@ -133,9 +133,10 @@ if(!class_exists('wp_file_manager_git')) {
 				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 				
 				$output9 = 	shell_exec('git remote -v');
-				echo $output9;die;
+				//echo $output9;die;
 				if($gitbranch){
-					$output0 =   shell_exec('git push -u origin '.$gitbranch);
+					//$output0 =   shell_exec('git push -u origin '.$gitbranch);
+					$output0 =   shell_exec('git push -u origin main');
 				}else{
 					$output0 =   shell_exec('git push -u origin main');
 				}
