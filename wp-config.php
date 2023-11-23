@@ -26,7 +26,7 @@ define( 'DB_NAME', 'truinc' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'root@123' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

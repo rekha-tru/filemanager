@@ -69,6 +69,7 @@ if(!class_exists('wp_file_manager_git')) {
 				$password = $settings['ELFINDER_GIT_PASSWORD'];
 				$message = $_POST['message'];
 				$gitreponame = $settings['ELFINDER_GIT_ACCESS_URL'];
+				$gitbranch = $settings['ELFINDER_GIT_ACCESS_BRANCH'];
 				$git_url = 'github.com/'.$username.'/'.$gitreponame.'.git';
 				$dir = $settings['ELFINDER_GIT_MASTER_ACCESS_DIRECTORY']; // path 
 				chdir( $dir );
@@ -76,7 +77,12 @@ if(!class_exists('wp_file_manager_git')) {
 				$output4 =shell_exec('git commit -m "'.$message.'"');
 				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');	
 				$output9 = 	shell_exec('git remote -v');
-				$output0 =   shell_exec('git push');
+				if($gitbranch){
+					$output0 =   shell_exec('git push -u origin '.$gitbranch);
+				}else{
+					$output0 =   shell_exec('git push -u origin main');
+				}
+				
 				//echo $output0;die;
 				
 				//echo shell_exec('git config --global user.email "'.$email.'"');
@@ -107,26 +113,31 @@ if(!class_exists('wp_file_manager_git')) {
 				$message = $_POST['message'];
 				//$git_url = str_replace(array('https://','http://'),'',$settings['ELFINDER_GIT_ACCESS_URL']);
 				$gitreponame = $settings['ELFINDER_GIT_ACCESS_URL'];
+				$gitbranch = $settings['ELFINDER_GIT_ACCESS_BRANCH'];
 				//echo $gitreponame;die;
 				$git_url = 'https://github.com/'.$username.'/'.$gitreponame.'.git';
 				$dir = $settings['ELFINDER_GIT_ACCESS_DIRECTORY']; // path
 				chdir( $dir ); 
 				//changed great
 				$output1 = 	 shell_exec('git init');
-			//	$output2 =  shell_exec('git status');
+				//$output2 =  shell_exec('git status');
 				$output3 =  shell_exec('git add .');	
-				$output4 = 	 shell_exec('git config --global user.email "'.$email.'"');
+				$output4 = 	shell_exec('git config --global user.email "'.$email.'"');
 				$output5 = 	shell_exec('git config --global user.name "'.$username.'"');
 				$output6 =  shell_exec('git commit -m "'.$message.'"');
 
 				//$output99 = 	shell_exec("git branch");	
 				//echo $output99;die;
 
-				$output7 = 	shell_exec('git branch -M main');
+				//$output7 = 	shell_exec('git branch -M main');
 				$output8 =   shell_exec('git remote add origin "'.$git_url.'"');
 				
 				$output9 = 	shell_exec('git remote -v');
-				$output0 =   shell_exec('git push -u origin main');
+				if($gitbranch){
+					$output0 =   shell_exec('git push -u origin '.$gitbranch);
+				}else{
+					$output0 =   shell_exec('git push -u origin main');
+				}
 				//-u origin main
 
 				

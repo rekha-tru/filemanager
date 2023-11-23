@@ -45,6 +45,11 @@ $settings = get_option('wp_file_manager_pro_git');
 				<h3><?php _e('GIT REPOSITORY NAME','wp-file-manager-git')?></h3>
 				<input name="ELFINDER_GIT_ACCESS_URL" type="text" id="ELFINDER_GIT_ACCESS_URL" placeholder="<?php _e('e.g foldername','wp-file-manager-git')?>" value="<?php echo isset($settings['ELFINDER_GIT_ACCESS_URL']) && !empty($settings['ELFINDER_GIT_ACCESS_URL']) ? $settings['ELFINDER_GIT_ACCESS_URL'] : '';?>" class="regular-text">
 			</div>
+
+			<div class="form-table-dv">
+				<h3><?php _e('GIT BRANCH NAME','wp-file-manager-git')?></h3>
+				<input name="ELFINDER_GIT_ACCESS_BRANCH" type="text" id="ELFINDER_GIT_ACCESS_BRANCH" placeholder="<?php _e('e.g branchname','wp-file-manager-git')?>" value="<?php echo isset($settings['ELFINDER_GIT_ACCESS_BRANCH']) && !empty($settings['ELFINDER_GIT_ACCESS_BRANCH']) ? $settings['ELFINDER_GIT_ACCESS_BRANCH'] : '';?>" class="regular-text">
+			</div>
             
             <div class="form-table-dv">
 				<h3><?php _e('GIT MASTER ACCESS DIRECTORY','wp-file-manager-git')?></h3>
